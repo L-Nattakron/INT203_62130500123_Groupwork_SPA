@@ -6,7 +6,7 @@
 
     <form @submit.prevent="addFeedback">
       
-        <h2 class="text-center text-3xl font-extrabold pb-5">
+        <h2 class="text-center text-5xl font-extrabold pb-5">
           Send Feedback
         </h2>
 
