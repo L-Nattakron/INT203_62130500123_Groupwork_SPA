@@ -1,6 +1,6 @@
 <!--ส่วนบน-->
 <template>
-  <div class="hello ">
+  <div>
     <h1>{{ msg }}</h1>
     
       <div class="container grid grid-cols-3 gap-14 place-items-center my-6 mx-auto px-6">
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Category',
   props: {
     msg: String
   }

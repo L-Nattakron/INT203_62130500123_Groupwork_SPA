@@ -3,24 +3,23 @@
   <div class="home bg-black bg-opacity-80 h-full">
     <img src="../assets/banner.jpg" class="object-cover w-full">
       
-    <HelloWorld msg=""/>
+    <Category msg=""/>
     <Product msg=""/>
-    <About msg=""/>
+    <about msg=""/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Category from '@/components/Category.vue'
 import Product from '@/components/Product.vue'
-import About from '@/components/About.vue'
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
-    Product,
-    About
+    Category,
+    Product
   }
 }
 </script>

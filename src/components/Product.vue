@@ -1,5 +1,5 @@
 <template>
-  <div class="hello  ">
+  <div>
     <h1>{{ msg }}</h1>
     
       <div class="container grid grid-cols-4 gap-10 place-items-center my-6 mx-auto px-4 pt-10">
@@ -55,7 +55,6 @@
               </div>
           </div>
       </div>
-
 
     <div>
       

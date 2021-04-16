@@ -1,11 +1,11 @@
 <!--หน้าเชื่อมrouter-->
 <template>
  <div id="nav" class="fixed z-50 bg-black bg-opacity-90 w-full flex items-stretch pl-16 pt-4 pb-2 ">
-    <a href="/" class=" flex-shrink text-5xl font-black mr-96 pr-60"> KPOP <span class="text-3xl text-white">store</span></a>
+    <a href="/" class=" flex-shrink text-5xl font-black mr-96 pr-60"> K<span class="text-3xl text-white">store</span></a>
     <div class="text-right self-center text-2xl ml-60">
       <router-link to="/">Home</router-link> |
-      <router-link to="/cart">Cart</router-link> |
-      <router-link to="/cart">Sign Up</router-link>
+      <router-link to="/new">New Album</router-link> |
+      <router-link to="/feedback">Feedback</router-link>
     </div>
   </div>
   <router-view/>
