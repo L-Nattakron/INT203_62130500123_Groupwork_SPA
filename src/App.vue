@@ -1,9 +1,17 @@
+<!--หน้าเชื่อมrouter-->
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+ <div id="nav" class="fixed z-50 bg-black bg-opacity-90 w-full flex items-stretch pl-16 pt-4 pb-2 ">
+    <a href="/" class=" flex-shrink text-5xl font-black mr-96 pr-60"> KPOP <span class="text-3xl text-white">store</span></a>
+    <div class="text-right self-center text-2xl ml-60">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/cart">Cart</router-link> |
+      <router-link to="/cart">Sign Up</router-link>
+    </div>
   </div>
   <router-view/>
+ 
+  
+
 </template>
 
 <style>
@@ -11,20 +19,18 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  
+  color: #ffffff;
 }
 
-#nav {
-  padding: 30px;
-}
+
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ff0000;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color:#ffffff ;
 }
 </style>
