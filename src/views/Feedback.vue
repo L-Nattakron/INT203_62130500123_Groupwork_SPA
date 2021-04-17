@@ -38,13 +38,17 @@
 
         <div>
             <h2 class="pb-1" for="ratting">Rating</h2>
-            <select id="ratting" v-model="rating" required class="rounded-lg w-full">
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-                <option value="2">2</option>
-                <option value="1">1</option>
-            </select>
+            <input type="radio"  v-model="rating" name="rating" value="5">
+              <label class="pr-6 pl-2 " for="5">5</label>
+            <input type="radio" v-model="rating" name="rating" value="4">
+              <label class="pr-6 pl-2" for="4">4</label>
+            <input type="radio" v-model="rating" name="rating" value="3">
+              <label class="pr-6 pl-2" for="3">3</label>
+            <input type="radio" v-model="rating" name="rating" value="2">
+              <label class="pr-6 pl-2" for="2">2</label>
+            <input type="radio" v-model="rating" name="rating" value="1">
+              <label class="pr-6 pl-2" for="1">1</label>
+
         </div>
 
         <div class="pt-2 pl-5 mx-48">
@@ -56,7 +60,7 @@
     </form>
     </div>
 
-    <div class="container grid grid-cols-4 gap-10 place-items-center my-6 mx-auto px-4 pt-10"> 
+    <div class="container  grid grid-cols-4 gap-10 place-items-center my-6 mx-auto px-4 pt-10"> 
         <div class="list" v-for="result in feedbackResults" :key="result.id">
             <section class="bg-gray-50 rounded-2xl p-5">
             <div class="text-gray-900">
@@ -75,17 +79,17 @@
             </div>
         
 
-<!--
+
     <form @submit="editSubmit(result)" v-if="isEdit">
       
-        <h2 class="text-center text-3xl font-extrabold pb-2">
-          Send Feedback
+        <h2 class="text-red-900 text-center text-lg font-extrabold pb-2 py-5">
+          Edit Feedback
         </h2>
         
-        <label class="" for="name">Name: </label>
+        <label class="text-red-900 font-semibold" for="name">Name: </label>
 
         <input 
-            class="text-black pl-3"
+            class="text-black bg-gray-200 rounded-lg text-sm w-auto focus:outline-none py-0.5 pl-3"
           id="name"
           type="text"
           v-model="oldName"
@@ -93,9 +97,9 @@
           required
         />
       
-        <h2 class="" for="feedback">Tell us what you love about the website,or what we could be doing better. </h2>
+        <h2 class="text-red-900 text-sm py-2 font-semibold" for="feedback">Tell us what you love about the website,or what we could be doing better. </h2>
         <textarea
-          class="text-black w-full"
+          class="bg-gray-200 text-black rounded-lg text-sm focus:outline-none py-0.5 pl-3 w-full"
           id="feedback"
           type="text"
           v-model="oldFeedback"
@@ -103,20 +107,26 @@
           required
         />
 
-        <h2 class="" for="ratting">Rating</h2>
-        <select id="ratting" v-model="oldrating" required>
-          <option value="5">5</option>
-          <option value="4">4</option>
-          <option value="3">3</option>
-          <option value="2">2</option>
-          <option value="1">1</option>
-        </select>
+        <h2 class="text-red-900 font-semibold" for="ratting">Rating</h2>
+        <div class="pb-6">
+        <input type="radio"  v-model="oldrating" name="rating" value="5">
+            <label class="pr-6 pl-2 font-semibold text-red-900" for="5">5</label>
+        <input type="radio" v-model="oldrating" name="rating" value="4">
+            <label class="pr-6 pl-2 font-semibold text-red-900" for="4">4</label>
+        <input type="radio" v-model="oldrating" name="rating" value="3">
+            <label class="pr-6 pl-2 font-semibold text-red-900" for="3">3</label>
+        <input type="radio" v-model="oldrating" name="rating" value="2">
+            <label class="pr-6 pl-2 font-semibold text-red-900" for="2">2</label>
+        <input type="radio" v-model="oldrating" name="rating" value="1">
+            <label class="pr-6 pl-2 font-semibold text-red-900" for="1">1</label>
+        <button class="float-right focus:outline-none btn text-sm bg-red-900 text-white  rounded-2xl shadow px-3 py-2 my-1" :class="w-20">
+          edit submit
+        </button>
+        </div>
         
-        <button class="btn border  rounded-xl shadow p-2 my-1" :class="w-20">
-    submit
-    </button>
+        
       
-    </form>-->
+    </form>
 
     </section>
     </div>
@@ -152,10 +162,10 @@ export default {
             rating:null,
             url:"http://localhost:3000/surveyResults",
             feedbackResults:[],
-           /*  isEdit:false,
+             isEdit:false,
             oldName:'',
             oldFeedback:'',
-            oldrating:''*/
+            oldrating:''
         }
     },
   methods: {
@@ -200,7 +210,7 @@ export default {
           : alert("Error to delete feedback");
       }
     },
-   /* editSurvey() {
+    editSurvey() {
       this.isEdit = true
     },
     async editSubmit(editingData) {
@@ -229,7 +239,7 @@ export default {
       )
       this.isEdit = false,this.oldName='',this.oldFeedback='',this.oldrating=null
 
-    }*/
+    }
   },
    async created() {
     this.feedbackResults = await this.fetchFeedbackResult();
@@ -238,18 +248,31 @@ export default {
 }
 </script>
 <style scoped>
-select {
-  
-  appearance: none;
-  color: black;
-  background-color: whitesmoke;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-}
+input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #831708;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
 </style>
